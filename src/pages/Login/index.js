@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { loginAPI } from "../../services/api";
+
 import {
   Form,
   FormGroup,
@@ -9,20 +11,52 @@ import {
 } from "./LoginElements";
 
 function Login() {
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+  });
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    loginAPI(values);
+  }
+
   return (
     <>
       <FormWrap>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <FormGroup>
-            <Label>Username</Label>
-            <Input />
+            <Label htmlFor="email">E-mail</Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Insert your e-mail"
+              required
+              onChange={(e) => handleChange(e)}
+              value={values.email}
+            />
           </FormGroup>
           <FormGroup>
-            <Label>Password</Label>
-            <Input />
+            <Label htmlFor="password">Password</Label>
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Insert your password"
+              required
+              onChange={(e) => handleChange(e)}
+              value={values.password}
+            />
           </FormGroup>
           <FormGroup>
-            <Button>Submit</Button>
+            <Button type="submit">Submit</Button>
           </FormGroup>
         </Form>
       </FormWrap>

@@ -38,16 +38,16 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   border-radius: 5px;
-  height: 25px;
+  height: 35px;
   border: none;
-  padding: 5px;
+  padding: 10px;
 `;
 
 export const Button = styled.button`
   width: 100%;
-  height: 30px;
+  height: 35px;
   border-radius: 5px;
   font-size: 1.2rem;
   background-color: #5151c4;
@@ -58,5 +58,9 @@ export const Button = styled.button`
   &:hover {
     transition: all 0.2s ease-in-out;
     background-color: #3939a9;
+  }
+
+  &:focus {
+    border: none;
   }
 `;
