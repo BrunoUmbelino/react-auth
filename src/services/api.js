@@ -1,16 +1,18 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3333";
+export default axios.create({
+  baseURL: "http://localhost:3333",
+});
 
 const testeAPI = () =>
   axios
-    .get(`${baseUrl}/`)
+    .get(`/`)
     .then((response) => console.log(response))
     .catch((err) => console.log(err));
 
 const loginAPI = ({ email, password }) => {
   axios
-    .post(`${baseUrl}/login`, {
+    .post(`/login`, {
       email,
       password,
     })

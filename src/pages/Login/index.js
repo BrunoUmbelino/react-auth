@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { loginAPI } from "../../services/api";
+import React, { useContext, useState } from "react";
+import { Context } from "../../Context/AuthContext";
 
 import {
   Form,
@@ -8,9 +8,11 @@ import {
   Input,
   Label,
   Button,
+  Error,
 } from "./LoginElements";
 
 function Login() {
+  const { handleLogin, loginError } = useContext(Context);
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -24,13 +26,15 @@ function Login() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    loginAPI(values);
+    handleLogin(values);
   }
 
   return (
     <>
+      {console.log(loginError)}
       <FormWrap>
         <Form onSubmit={handleSubmit}>
+          <Error>{loginError}</Error>
           <FormGroup>
             <Label htmlFor="email">E-mail</Label>
             <Input

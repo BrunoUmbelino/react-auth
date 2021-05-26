@@ -9,6 +9,10 @@ export const FormWrap = styled.div`
   background: linear-gradient(90deg, #4040c4, #5151c4);
 `;
 
+export const Error = styled.span`
+  color: red;
+`;
+
 export const Form = styled.form`
   width: 300px;
   height: 300px;

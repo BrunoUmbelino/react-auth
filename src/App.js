@@ -1,17 +1,17 @@
-import Login from "./pages/Login";
-import Main from "./pages/Main";
-import { Switch, BrowserRouter, Route } from "react-router-dom";
+import React from "react";
+import { Router } from "react-router-dom";
+import { AuthProvider } from "./Context/AuthContext";
+
+import history from "./routes/history";
+import Routes from "./routes";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact component={Login} />
-          <Route path="/main" component={Main} />
-        </Switch>
-      </BrowserRouter>
-    </>
+    <AuthProvider>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </AuthProvider>
   );
 }
 
