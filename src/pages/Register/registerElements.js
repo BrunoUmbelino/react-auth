@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Form, Field, Formik } from "formik";
+import { Form, Field, Formik, ErrorMessage } from "formik";
 
 export const Container = styled.div`
   width: 100%;
@@ -38,6 +38,7 @@ export const FormGroup = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
+  color: #f53434;
 `;
 
 export const Label = styled.label`
@@ -57,3 +58,5 @@ export const FormikField = styled(Field)`
 export const LoginText = styled.a`
   color: white;
 `;
+
+export const FormikError = styled(ErrorMessage)``;

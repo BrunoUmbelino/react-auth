@@ -1,4 +1,5 @@
 import React from "react";
+import * as Yup from "yup";
 
 import {
   Container,
@@ -9,15 +10,29 @@ import {
   Label,
   Title,
   LoginText,
+  FormikError,
 } from "./registerElements";
 import Button from "../../Components/Button";
 
 function Register() {
+  const validateRegister = Yup.object({
+    email: Yup.string().email("Invalid email address").required("Required"),
+    password: Yup.string()
+      .max(18, "Must be 18 characters or less")
+      .min(8, "Must be 8 characters or more")
+      .required("Required"),
+    passwordConfirmation: Yup.string().oneOf(
+      [Yup.ref("password"), null],
+      "Passwords must match"
+    ),
+  });
+
   return (
     <>
       <Container>
         <FormikBlok
           initialValues={{}}
+          validationSchema={validateRegister}
           onSubmit={async (values) => {
             await new Promise((resolve) => setTimeout(resolve, 500));
             alert(JSON.stringify(values, null, 2));
@@ -33,6 +48,7 @@ function Register() {
                 type="text"
                 placeholder="Insert your E-mail"
               />
+              <FormikError name="email" />
             </FormGroup>
             <FormGroup>
               <Label htmlFor="password">Password</Label>
@@ -42,15 +58,17 @@ function Register() {
                 type="password"
                 placeholder="Insert your password"
               />
+              <FormikError name="password" />
             </FormGroup>
             <FormGroup>
-              <Label htmlFor="password2">Confirm Password</Label>
+              <Label htmlFor="passwordConfirmation">Confirm Password</Label>
               <FormikField
-                id="password2"
-                name="password2"
+                id="passwordConfirmation"
+                name="passwordConfirmation"
                 type="password"
                 placeholder="Confirm your password"
               />
+              <FormikError name="passwordConfirmation" />
             </FormGroup>
             <FormGroup>
               <Button type="submit">Submit</Button>
