@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Login from "../pages/Login";
 import Main from "../pages/Main";
 import Loading from "../pages/Loading";
+import Register from "../pages/Register";
 
 import { Context } from "../Context/AuthContext";
 
@@ -26,8 +27,9 @@ function Routes() {
   return (
     <>
       <Switch>
-        <CustomRoute path="/login" exact component={Login} />
         <CustomRoute isPrivate exact path="/" component={Main} />
+        <CustomRoute path="/login" exact component={Login} />
+        <CustomRoute path="/register" exact component={Register} />
       </Switch>
     </>
   );
