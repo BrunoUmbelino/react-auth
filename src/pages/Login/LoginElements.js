@@ -39,6 +39,7 @@ export const FormikForm = styled(Form)`
 
 export const FormGroup = styled.div`
   width: 80%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
