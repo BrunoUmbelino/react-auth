@@ -6,7 +6,6 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, #4040c4, #4040c4, #5151c4);
 `;
 
 export const Message = styled.h4`
