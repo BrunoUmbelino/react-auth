@@ -1,68 +1,75 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
+import Button from "../../Components/Button";
 import { Context } from "../../Context/AuthContext";
+import * as Yup from "yup";
 
 import {
-  Form,
+  FormikBlok,
   FormGroup,
-  Input,
+  FormikField,
   Label,
-  Button,
-  Error,
+  FormikForm,
   Container,
+  RegisterText,
+  Error,
+  Title,
+  FormikError,
 } from "./LoginElements";
 
 function Login() {
   const { handleLogin, loginError } = useContext(Context);
-  const [values, setValues] = useState({
-    email: "",
-    password: "",
+
+  const validateLogin = Yup.object({
+    email: Yup.string().email("Invalid email address").required("Required"),
+    password: Yup.string()
+      .max(18, "Invalid password")
+      .min(8, "Invalid password")
+      .required("Required"),
   });
-
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    handleLogin(values);
-  }
 
   return (
     <>
       {console.log(loginError)}
       <Container>
-        <Form onSubmit={handleSubmit}>
-          <Error>{loginError}</Error>
-          <FormGroup>
-            <Label htmlFor="email">E-mail</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Insert your e-mail"
-              required
-              onChange={(e) => handleChange(e)}
-              value={values.email}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="Insert your password"
-              required
-              onChange={(e) => handleChange(e)}
-              value={values.password}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Button type="submit">Login</Button>
-          </FormGroup>
-        </Form>
+        <FormikBlok
+          initialValues={{ email: "", password: "" }}
+          validationSchema={validateLogin}
+          onSubmit={async (values) => {
+            await new Promise((resolve) => setTimeout(resolve, 500));
+            handleLogin(values);
+          }}
+        >
+          <FormikForm>
+            <Title>Login</Title>
+            <FormGroup>
+              <Error>{loginError}</Error>
+              <Label htmlFor="email">E-mail</Label>
+              <FormikField
+                id="email"
+                name="email"
+                type="text"
+                placeholder="Insert your E-mail"
+              />
+              <FormikError name="email" />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor="password">Password</Label>
+              <FormikField
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Insert your password"
+              />
+              <FormikError name="password" />
+            </FormGroup>
+            <FormGroup>
+              <Button type="submit">Submit</Button>
+            </FormGroup>
+          </FormikForm>
+        </FormikBlok>
+        <RegisterText href="/register">
+          Don't have an account? register now
+        </RegisterText>
       </Container>
     </>
   );
