@@ -4,11 +4,11 @@ import { Context } from "../../Context/AuthContext";
 import {
   Form,
   FormGroup,
-  FormWrap,
   Input,
   Label,
   Button,
   Error,
+  Container,
 } from "./LoginElements";
 
 function Login() {
@@ -32,7 +32,7 @@ function Login() {
   return (
     <>
       {console.log(loginError)}
-      <FormWrap>
+      <Container>
         <Form onSubmit={handleSubmit}>
           <Error>{loginError}</Error>
           <FormGroup>
@@ -60,10 +60,10 @@ function Login() {
             />
           </FormGroup>
           <FormGroup>
-            <Button type="submit">Submit</Button>
+            <Button type="submit">Login</Button>
           </FormGroup>
         </Form>
-      </FormWrap>
+      </Container>
     </>
   );
 }
