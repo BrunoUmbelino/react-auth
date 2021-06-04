@@ -23,7 +23,7 @@ export default function useAuth() {
 
   async function handleLogin({ email, password }) {
     try {
-      const response = await api.post(`/login`, {
+      const response = await api.post("/login", {
         email,
         password,
       });

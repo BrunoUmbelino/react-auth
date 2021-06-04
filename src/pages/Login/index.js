@@ -29,7 +29,6 @@ function Login() {
 
   return (
     <>
-      {console.log(loginError)}
       <Container>
         <FormikBlok
           initialValues={{ email: "", password: "" }}
