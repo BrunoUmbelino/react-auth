@@ -1,4 +1,5 @@
 import React from "react";
+import register from "../../services/registerAPI";
 import * as Yup from "yup";
 
 import {
@@ -31,11 +32,10 @@ function Register() {
     <>
       <Container>
         <FormikBlok
-          initialValues={{}}
+          initialValues={{ email: "", password: "", passwordConfirmation: "" }}
           validationSchema={validateRegister}
-          onSubmit={async (values) => {
-            await new Promise((resolve) => setTimeout(resolve, 500));
-            alert(JSON.stringify(values, null, 2));
+          onSubmit={(values) => {
+            register(values);
           }}
         >
           <FormikForm>

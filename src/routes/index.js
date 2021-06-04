@@ -11,7 +11,6 @@ import { Context } from "../Context/AuthContext";
 function Routes() {
   function CustomRoute({ isPrivate, ...rest }) {
     const { loading, authenticated } = useContext(Context);
-    console.log("auth", authenticated);
 
     if (loading) {
       return <Loading />;
@@ -30,6 +29,7 @@ function Routes() {
         <CustomRoute isPrivate exact path="/" component={Main} />
         <CustomRoute path="/login" exact component={Login} />
         <CustomRoute path="/register" exact component={Register} />
+        <CustomRoute path="/loading" exact component={Loading} />
       </Switch>
     </>
   );
