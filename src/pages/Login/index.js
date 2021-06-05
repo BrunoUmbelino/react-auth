@@ -13,6 +13,7 @@ import {
   Title,
   FormikError,
   SpanText,
+  WrapFormikError,
 } from "../../Components/FormElements";
 import Button from "../../Components/Button";
 
@@ -49,7 +50,9 @@ function Login() {
                 type="text"
                 placeholder="Insert your E-mail"
               />
-              <FormikError name="email" />
+              <WrapFormikError>
+                <FormikError name="email" />
+              </WrapFormikError>
             </FormGroup>
             <FormGroup>
               <Label htmlFor="password">Password</Label>
@@ -59,7 +62,9 @@ function Login() {
                 type="password"
                 placeholder="Insert your password"
               />
-              <FormikError name="password" />
+              <WrapFormikError>
+                <FormikError name="password" />
+              </WrapFormikError>
             </FormGroup>
             <FormGroup>
               <Button type="submit">Submit</Button>

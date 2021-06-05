@@ -12,6 +12,7 @@ import {
   Title,
   FormikError,
   SpanText,
+  WrapFormikError,
 } from "../../Components/FormElements";
 import Button from "../../Components/Button";
 
@@ -48,7 +49,9 @@ function Register() {
                 type="text"
                 placeholder="Insert your E-mail"
               />
-              <FormikError name="email" />
+              <WrapFormikError>
+                <FormikError name="email" />
+              </WrapFormikError>
             </FormGroup>
             <FormGroup>
               <Label htmlFor="password">Password</Label>
@@ -58,7 +61,9 @@ function Register() {
                 type="password"
                 placeholder="Insert your password"
               />
-              <FormikError name="password" />
+              <WrapFormikError>
+                <FormikError name="password" />
+              </WrapFormikError>
             </FormGroup>
             <FormGroup>
               <Label htmlFor="passwordConfirmation">Confirm Password</Label>
@@ -68,7 +73,9 @@ function Register() {
                 type="password"
                 placeholder="Confirm your password"
               />
-              <FormikError name="passwordConfirmation" />
+              <WrapFormikError>
+                <FormikError name="passwordConfirmation" />
+              </WrapFormikError>
             </FormGroup>
             <FormGroup>
               <Button type="submit">Submit</Button>

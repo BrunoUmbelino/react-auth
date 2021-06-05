@@ -41,8 +41,6 @@ export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 20px;
-  color: #f53434;
 `;
 
 export const Label = styled.label`
@@ -70,6 +68,11 @@ export const SpanText = styled.a`
     border-color: white;
     transition: all 0.3s ease;
   }
+`;
+
+export const WrapFormikError = styled.div`
+  color: #f53434;
+  height: 20px;
 `;
 
 export const FormikError = styled(ErrorMessage)``;
