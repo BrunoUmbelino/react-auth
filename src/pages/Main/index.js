@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Container, Icon, Message } from "./MainElements";
-import { IoLogOut } from "react-icons/io5";
+import { IoLogOut, IoHappy } from "react-icons/io5";
 import { Context } from "../../Context/AuthContext";
 
 function Main() {
@@ -18,7 +18,9 @@ function Main() {
         <Icon>
           <IoLogOut onClick={handleLogout} />
         </Icon>
-        <Message>Welcome {username}</Message>
+        <Message>
+          Welcome {username} <IoHappy style={{ fontSize: "2.4rem" }} />
+        </Message>
       </Container>
     </>
   );

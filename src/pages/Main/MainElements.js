@@ -10,14 +10,19 @@ export const Container = styled.div`
 
 export const Message = styled.h4`
   color: white;
-  font-size: 2rem;
+  font-size: 3rem;
 `;
 
 export const Icon = styled.div`
-  font-size: 2rem;
+  font-size: 2.5rem;
   position: absolute;
-  top: 20px;
-  right: 40px;
+  top: 40px;
+  right: 10px;
   color: white;
   cursor: pointer;
+
+  &:hover {
+    transition: all 0.2s ease;
+    color: #ffffffb5;
+  }
 `;
