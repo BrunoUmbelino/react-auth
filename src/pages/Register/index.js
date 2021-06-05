@@ -10,9 +10,9 @@ import {
   FormikBlok,
   Label,
   Title,
-  LoginText,
   FormikError,
-} from "./registerElements";
+  SpanText,
+} from "../../Components/FormElements";
 import Button from "../../Components/Button";
 
 function Register() {
@@ -75,7 +75,7 @@ function Register() {
             </FormGroup>
           </FormikForm>
         </FormikBlok>
-        <LoginText href="/login">Return to login page</LoginText>
+        <SpanText href="/login">Return to Login Page.</SpanText>
       </Container>
     </>
   );

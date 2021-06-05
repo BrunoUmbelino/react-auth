@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Button from "../../Components/Button";
 import { Context } from "../../Context/AuthContext";
 import * as Yup from "yup";
 
@@ -10,11 +9,12 @@ import {
   Label,
   FormikForm,
   Container,
-  RegisterText,
   Error,
   Title,
   FormikError,
-} from "./LoginElements";
+  SpanText,
+} from "../../Components/FormElements";
+import Button from "../../Components/Button";
 
 function Login() {
   const { handleLogin, loginError } = useContext(Context);
@@ -66,9 +66,9 @@ function Login() {
             </FormGroup>
           </FormikForm>
         </FormikBlok>
-        <RegisterText href="/register">
-          Don't have an account? register now
-        </RegisterText>
+        <SpanText href="/register">
+          Don't have an account? Register now!
+        </SpanText>
       </Container>
     </>
   );

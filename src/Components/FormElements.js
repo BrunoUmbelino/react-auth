@@ -17,7 +17,7 @@ export const Error = styled.span`
 
 export const Title = styled.h1`
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin-bottom: 10px;
 `;
 
@@ -33,13 +33,11 @@ export const FormikForm = styled(Form)`
   background-color: #292929;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  padding: 1rem 0;
-  margin-bottom: 20px;
+  padding: 2rem;
 `;
 
 export const FormGroup = styled.div`
-  width: 80%;
-
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,8 +59,17 @@ export const FormikField = styled(Field)`
   padding: 10px;
 `;
 
-export const RegisterText = styled.a`
+export const SpanText = styled.a`
   color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-top: 25px;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-color: white;
+    transition: all 0.3s ease;
+  }
 `;
 
 export const FormikError = styled(ErrorMessage)``;
