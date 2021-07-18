@@ -2,17 +2,25 @@
 
 link : https://react-auth-bruno-umbelino.herokuapp.com/
 
-### How to use
+This project is a demonstration of Authentication by Token in React and Node. 
 
-##### Clone this repository
+### Tecnologies
 
-    git clone 'https://github.com/BrunoUmbelino/react-auth.git'
-    
-##### Go to the repository and install the dependencies
+Front-end
+* React (Functional Components, Hooks, Custom Hooks, Context API)
+* Axios
+* Styled Components
+* Formik / Yup
+* JavaScript ES6
+* HTML5
+* CSS3
 
-    cd react-auth
-    npm install 
+[Back-end](https://github.com/BrunoUmbelino/node-auth)
+* Node
+* Express
+* MongoDB
+* Mongoose
+* Axios
+* JsonWebToken
+* BcryptJs
 
-##### Start server
-
-    npm start
