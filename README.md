@@ -1,6 +1,11 @@
-# react-auth
+# JWT-AUTHENTICATION
 
-link : https://react-auth-bruno-umbelino.herokuapp.com/
+Link : https://react-auth-bruno-umbelino.herokuapp.com/
+
+![Login screen](https://github.com/BrunoUmbelino/react-auth/blob/main/github-img/auth-token-login-page.PNG)
+---
+![Main screen](https://github.com/BrunoUmbelino/react-auth/blob/main/github-img/auth-token-main-page.PNG)
+
 
 This project is a demonstration of Authentication by Token in React and Node. 
 
