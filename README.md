@@ -23,7 +23,7 @@ Front-end
 [Back-end](https://github.com/BrunoUmbelino/node-auth)
 * Node
 * Express
-* MongoDB
+* MongoDB Atlas
 * Mongoose
 * Axios
 * JsonWebToken
